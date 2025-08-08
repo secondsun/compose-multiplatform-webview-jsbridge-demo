@@ -1,1 +1,0 @@
-This project was written to test a bug in JSON serialization and the js Bridge in https://github.com/KevinnZou/compose-webview-multiplatform
