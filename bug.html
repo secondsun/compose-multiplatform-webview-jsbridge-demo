@@ -1,0 +1,27 @@
+<html>
+    <body>
+    <script>
+        setTimeout(() => {
+            window.webBridge.callNative("Init",JSON.stringify({}),
+              function (data) {
+                   console.log("Init Done", typeof data);
+                   try {
+                        data = JSON.parse(data);
+                        try {
+                            console.log("data", data);
+                            document.body.innerHTML = data.text;
+                        } catch (e) {
+                            console.log("Error updating text ", data, e);
+                        }
+                    } catch (e) {
+                        console.log("Error parsing data", e);
+                    }
+
+
+              }
+            );
+        }, 100)
+    </script>
+    </body>
+
+</html>
